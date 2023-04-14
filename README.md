@@ -11,7 +11,7 @@ Add flowing in
 
 then following line in app gradle
 
-     implementation 'com.github.tariqzia7523:MyDocReaderLib:Tag'
+     implementation 'com.github.tariqzia7523:MyDocReaderLib:1.0.0'
 
 # Usage
 
