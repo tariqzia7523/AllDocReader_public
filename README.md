@@ -10,7 +10,7 @@ then following line in app gradle
 [![](https://jitpack.io/v/tariqzia7523/MyDocReaderLib.svg)](https://jitpack.io/#tariqzia7523/MyDocReaderLib)
 
 
-implementation 'com.github.tariqzia7523:MyDocReaderLib:Tag'
+implementation 'com.github.tariqzia7523:MyDocReaderLib:2.0.0'
 
 ## Usage
 
