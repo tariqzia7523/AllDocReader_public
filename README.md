@@ -1,52 +1,34 @@
-# AllDocReader_public
+# MyDocReaderLib
 
-[![](https://jitpack.io/v/tariqzia7523/MyDocReaderLib.svg)](https://jitpack.io/#tariqzia7523/MyDocReaderLib)
+## implementation
 
-This project contains library for reading almost every kind of file, xls, doc ppt and almost every other. 
-
-# implementation
-Add flowing in 
-    
-    maven { url 'https://jitpack.io' }
+Add flowing in
+maven { url 'https://jitpack.io' }
 
 then following line in app gradle
 
-     implementation 'com.github.tariqzia7523:MyDocReaderLib:1.0.0'
+[![](https://jitpack.io/v/tariqzia7523/MyDocReaderLib.svg)](https://jitpack.io/#tariqzia7523/MyDocReaderLib)
 
-# Usage
 
-Add Following Tag in app's manifest 
-    
-    <activity
-            android:name="com.xls.bbbbb.office.OpenFileActivity"
-            android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-    </activity>
+implementation 'com.github.tariqzia7523:MyDocReaderLib:Tag'
 
-Call this activity and pass filePath like following
+## Usage
 
-     val intent = Intent()
-     intent.setClass(this@MainActivity, OpenFileActivity::class.java)
-     intent.putExtra(MainConstant.INTENT_FILED_FILE_PATH, fileModel.filePath)
-     startActivityForResult(intent, RESULT_FIRST_USER)
+Create a FrameLayout in your app, which will actually show the file. and pass that to object of FileOpenerClass
 
-You may call it like 
+Like this 
 
-     startActivity(Intent(this@MainActivity,OpenFileActivity::class.java).putExtra(MainConstant.INTENT_FILED_FILE_PATH, fileModel.filePath))
+        FileOpenerClass(activity, fileUri,frameLayout,mimeType)
 
-## you may use this as 
+
+### You may use this ass 
 
 This lib can give you list of any required document type you may use following code. Its good to use it in another thread
 
-     try{
-         val list : ArrayList<FileModel> = FileListUtils.getExternalFileList(this@MainActivity, MimeTypeMap.getSingleton().getMimeTypeFromExtension("docx")!!)
-     }catch (e : Exception){
-        e.printStackTrace()
-     }
+         try{
+                val list : ArrayList<FileModel> = FileListUtils.getExternalFileList(this@MainActivity, MimeTypeMap.getSingleton().getMimeTypeFromExtension("docx")!!)
+         }catch (e : Exception){
+                e.printStackTrace()
+         }
 
-And FileModel class is 
 
-    class FileModel(var displayName : String, var fileUri : Uri, var filePath : String) {}
-
-GoodLuck
